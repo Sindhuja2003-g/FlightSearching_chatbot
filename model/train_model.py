@@ -1,22 +1,20 @@
 import json
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.layers import Bidirectional, LSTM, Dense, Dropout, BatchNormalization # type: ignore
+from tensorflow.keras.layers import Bidirectional, Embedding,LSTM, Dense, Dropout # type: ignore
 from tensorflow.keras.preprocessing.text import Tokenizer # type: ignore
 from tensorflow.keras.preprocessing.sequence import pad_sequences # type: ignore
 from tensorflow.keras.callbacks import EarlyStopping, LearningRateScheduler # type: ignore
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential # type: ignore
-from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout, BatchNormalization # type: ignore
 import pickle
-from tensorflow.keras.regularizers import l2 # type: ignore
+
 
 
 # Paths for saving
 MODEL_PATH = "chatbot_model.h5"
 LABEL_ENCODER_PATH = "label_encoder.npy"
-WORDS_PATH = "words.npy"
 INTENTS_FILE = "intents.json"
 PERFORMANCE_LOG_PATH = "model_performance.json"
 
@@ -84,13 +82,13 @@ def train_and_save_model(padded_sequences, training_labels, max_sequence_length,
     metrics=['accuracy']
 )
 
-# Learning rate scheduler for gradual learning rate decay
+#Learning rate scheduler 
     scheduler = LearningRateScheduler(lambda epoch: 1e-4 * 10 ** (epoch / 20))
 
-# Early stopping to prevent overfitting
+#Early stopping 
     early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
-# Train the model
+
     history = model.fit(
     X_train, y_train, 
     epochs=100, 
@@ -99,11 +97,11 @@ def train_and_save_model(padded_sequences, training_labels, max_sequence_length,
     verbose=1
 )
 
-    # Save the model
+    
     model.save(MODEL_PATH)
     print(f"Model saved to {MODEL_PATH}")
 
-    # Save performance metrics
+   
     performance = {
         "training_loss": history.history['loss'],
         "training_accuracy": history.history['accuracy'],
@@ -115,7 +113,6 @@ def train_and_save_model(padded_sequences, training_labels, max_sequence_length,
     print(f"Model performance saved to {PERFORMANCE_LOG_PATH}")
 
 
-# Main block to load data, preprocess, and train the model
 if __name__ == "__main__":
     intents = load_intents(INTENTS_FILE)
     padded_sequences, training_labels, tokenizer, classes, words, max_sequence_length = preprocess_data(intents)
