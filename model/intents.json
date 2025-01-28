@@ -1,0 +1,122 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening",
+        "Hi there",
+        "Hey there",
+        "Howdy",
+        "What's up?",
+        "Greetings",
+        "Yo",
+        "What's good?",
+        "How's it going?",
+        "How are you?",
+        "Hello there!"
+      ],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi! What can I do for you?",
+        "Hey! How can I help?",
+        "Greetings! How may I assist you?"
+      ]
+    },
+    {
+      "tag": "flight_query",
+      "patterns": [
+        "I want to book a flight",
+        "Can you help me book a flight?",
+        "Find a flight for me",
+        "Flight booking",
+        "I need to book a flight ticket",
+        "Help me with flight reservations",
+        "Can you check flights?",
+        "I want to find a flight",
+        "Search flights for me",
+        "Book a flight for me",
+        "Can you find me a flight ticket?",
+        "I need a flight",
+        "Can you book a flight for me?",
+        "Help me book a flight"
+      ],
+      "responses": [
+        "Sure! Please provide the source location.",
+        "Okay! Let's start with the source location. Where are you flying from?",
+        "Got it! Tell me the source location first.",
+        "Absolutely! Let me know where you're flying from."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Talk to you later",
+        "I am leaving now",
+        "Catch you later",
+        "Take care",
+        "See you soon",
+        "Farewell",
+        "I'm done for now",
+        "Thank you",
+        "Thanks",
+        "Thanks a lot",
+        "I appreciate it",
+        "Much obliged",
+        "Thank you very much",
+        "Thanks so much",
+        "Thanks for your help",
+        "See you later alligator",
+        "Goodbye for now",
+        "Catch you on the flip side",
+        "Have a nice day",
+        "Take it easy"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later! Take care!",
+        "Bye! Let me know if you need anything else.",
+        "Farewell! Feel free to come back anytime.",
+        "You're welcome! Let me know if there's anything else I can do.",
+        "Happy to help! Goodbye!"
+      ]
+    },
+    {
+      "tag": "undefined",
+      "patterns": [
+        "Tell me a joke",
+        "What's your name?",
+        "Can you do math?",
+        "What's the time?",
+        "What's the weather like?",
+        "Tell me the current weather",
+        "How is the weather today?",
+        "Check the weather for me",
+        "What can you do?",
+        "Do you have any skills?",
+        "Who made you?",
+        "Are you a robot?",
+        "How are you?",
+        "What's the date today?",
+        "Can you tell me a story?",
+        "Do you know any fun facts?",
+        "What's your favorite color?",
+        "Where are you from?",
+        "What is your purpose?",
+        "How do you work?"
+      ],
+      "responses": [
+        "I'm sorry, I didn't understand you.",
+        "Can you please rephrase that?",
+        "I can help with flight bookings. Let me know if you need assistance.",
+        "I'm not sure about that. Can we focus on flight booking?"
+      ]
+    }
+  ]
+}
