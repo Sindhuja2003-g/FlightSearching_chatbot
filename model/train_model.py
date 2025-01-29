@@ -5,6 +5,7 @@ from tensorflow.keras.layers import Bidirectional, Embedding,LSTM, Dense, Dropou
 from tensorflow.keras.preprocessing.text import Tokenizer # type: ignore
 from tensorflow.keras.preprocessing.sequence import pad_sequences # type: ignore
 from tensorflow.keras.callbacks import EarlyStopping, LearningRateScheduler # type: ignore
+from tensorflow.keras.regularizers import l2 # type: ignore
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential # type: ignore

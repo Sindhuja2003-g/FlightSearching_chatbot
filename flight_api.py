@@ -1,7 +1,7 @@
 import requests
 
-CLIENT_ID = ""
-CLIENT_SECRET = ""
+CLIENT_ID = "qym6nfg7E20fyAtpWCG0kE0jF9zG59h3"
+CLIENT_SECRET = "UzGhJzXQaGiOqgDt"
 
 
 def get_access_token():
